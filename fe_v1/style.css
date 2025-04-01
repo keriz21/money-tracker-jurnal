@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center; /* Tambahkan ini untuk memusatkan item secara horizontal */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width:  50%;
+    align-items: center;
+}
+
+.form-item {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    background-color: pink;
+}
+
+.hidden {
+    display: none;
+}

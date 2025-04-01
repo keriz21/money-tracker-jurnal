@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Money Tracker</h2>
+        <div class="button-container">
+            <button onclick="toggleMenu('expenseContainer')">Pengeluaran</button>
+            <button onclick="toggleMenu('incomeContainer')">Pemasukkan</button>
+            <button onclick="toggleMenu('transferContainer')">Transfer</button>
+        </div>
+
+        <div class="form-container hidden" id="expenseContainer">
+            <form  class="form" id="expenseForm">
+                <h3>Form Pengeluaran</h3>
+                <div class="form-item">
+                    <label for="expenseDate">Tanggal</label>
+                    <input type="date" id="expenseDate" name="expenseDate" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="expenseCategory">Kategori</label>
+                    <select name="expenseCategory" id="expenseCategory" required>
+                        <option value="" disabled selected>Pilih Kategori</option>
+                        <option value="makanan">Makanan</option>
+                        <option value="transportasi">Transportasi</option>
+                        <option value="hiburan">Hiburan</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="expenseAmount">Total</label>
+                    <input type="text" name="expenseAmount" id="expenseAmount" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="expenseAsset">Aset</label>
+                    <select name="expenseAsset" id="expenseAsset" required>
+                        <option value="" disabled selected>Pilih Aset</option>
+                        <option value="cash">Cash</option>
+                        <option value="bni">BNI</option>
+                        <option value="jenius">Jenius</option>
+                        <option value="jenius-simpanan">Jenius Simpanan</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="expenseNote">Catatan</label>
+                    <textarea name="expenseNote" id="expenseNote" rows="4" placeholder="Catatan"></textarea>
+                </div>
+
+                <div class="form-item">
+                    <button type="button" onclick="submitForm('expenseForm')">Simpan</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container hidden" id="incomeContainer">
+            <form  class="form" id="incomeForm">
+                <h3>Form Pemasukkan</h3>
+                <div class="form-item">
+                    <label for="incomeDate">Tanggal</label>
+                    <input type="date" id="incomeDate" name="incomeDate" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="incomeCategory">Kategori</label>
+                    <select name="incomeCategory" id="incomeCategory" required>
+                        <option value="" disabled selected>Pilih Kategori</option>
+                        <option value="gaji">Gaji</option>
+                        <option value="investasi">Investasi</option>
+                        <option value="hadiah">Hadiah</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="incomeAmount">Total</label>
+                    <input type="text" name="incomeAmount" id="incomeAmount" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="incomeAsset">Aset</label>
+                    <select name="incomeAsset" id="incomeAsset" required>
+                        <option value="" disabled selected>Pilih Aset</option>
+                        <option value="cash">Cash</option>
+                        <option value="bni">BNI</option>
+                        <option value="jenius">Jenius</option>
+                        <option value="jenius-simpanan">Jenius Simpanan</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="incomeNote">Catatan</label>
+                    <textarea name="incomeNote" id="incomeNote" rows="4" placeholder="Catatan"></textarea>
+                </div>
+
+                <div class="form-item">
+                    <button type="button" onclick="submitForm('incomeForm')">Simpan</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container" id="transferContainer">
+            <form  class="form" id="transferForm">
+                <h3>Form Transfer antar aset</h3>
+                <div class="form-item">
+                    <label for="transferDate">Tanggal</label>
+                    <input type="date" id="transferDate" name="transferDate" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="transferAmount">Total</label>
+                    <input type="text" name="transferAmount" id="transferAmount" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="transferAmountCost">Total</label>
+                    <input type="text" name="transferAmountCost" id="transferAmountCost" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="transferAssetOut">Aset Keluar</label>
+                    <select name="transferAsset" id="transferAssetOut" required>
+                        <option value="" disabled selected>Pilih Aset</option>
+                        <option value="cash">Cash</option>
+                        <option value="bni">BNI</option>
+                        <option value="jenius">Jenius</option>
+                        <option value="jenius-simpanan">Jenius Simpanan</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="transferAssetIn">Aset Masuk</label>
+                    <select name="transferAsset" id="transferAssetIn" required>
+                        <option value="" disabled selected>Pilih Aset</option>
+                        <option value="cash">Cash</option>
+                        <option value="bni">BNI</option>
+                        <option value="jenius">Jenius</option>
+                        <option value="jenius-simpanan">Jenius Simpanan</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="transferNote">Catatan</label>
+                    <textarea name="transferNote" id="transferNote" rows="4" placeholder="Catatan"></textarea>
+                </div>
+
+                <div class="form-item">
+                    <button type="button" onclick="submitForm('transferForm')">Simpan</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
