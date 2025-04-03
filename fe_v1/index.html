@@ -12,9 +12,8 @@
         <div class="button-container">
             <button onclick="toggleMenu('expenseContainer')">Pengeluaran</button>
             <button onclick="toggleMenu('incomeContainer')">Pemasukkan</button>
-            <a href="tabel.html">
-                <button>Laporan Keuangan</button>
-            </a>
+            <button onclick="window.location.href='tabel.html'">Laporan Keuangan</button>
+            <button onclick="window.location.href='input_data_kreatif.html'">Input Data Kreatif</button>
             <!-- <button onclick="toggleMenu('transferContainer')">Transfer</button> -->
         </div>
 
@@ -161,7 +160,7 @@
             </form>
         </div>
 
-        <div class="form-container">
+        <div class="form-container hidden" id="inputKreatifContainer">
             <form action="" class="form">
                 <h3>Input Jurnal Transaksi Hari ini</h3>
 
