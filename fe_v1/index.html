@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <div class="container">
-        <h2>Money Tracker</h2>
+        <h1>Money Tracker</h1>
         <div class="button-container">
             <button onclick="toggleMenu('expenseContainer')">Pengeluaran</button>
             <button onclick="toggleMenu('incomeContainer')">Pemasukkan</button>
-            <button onclick="toggleMenu('transferContainer')">Transfer</button>
+            <a href="tabel.html">
+                <button>Laporan Keuangan</button>
+            </a>
+            <!-- <button onclick="toggleMenu('transferContainer')">Transfer</button> -->
         </div>
 
-        <div class="form-container hidden" id="expenseContainer">
+        <div class="form-container" id="expenseContainer">
             <form  class="form" id="expenseForm">
                 <h3>Form Pengeluaran</h3>
                 <div class="form-item">
@@ -36,7 +39,7 @@
 
                 <div class="form-item">
                     <label for="expenseAmount">Total</label>
-                    <input type="text" name="expenseAmount" id="expenseAmount" required>
+                    <input type="number" name="expenseAmount" id="expenseAmount" required>
                 </div>
 
                 <div class="form-item">
@@ -82,7 +85,7 @@
 
                 <div class="form-item">
                     <label for="incomeAmount">Total</label>
-                    <input type="text" name="incomeAmount" id="incomeAmount" required>
+                    <input type="number" name="incomeAmount" id="incomeAmount" required>
                 </div>
 
                 <div class="form-item">
@@ -107,7 +110,7 @@
             </form>
         </div>
 
-        <div class="form-container" id="transferContainer">
+        <div class="form-container hidden" id="transferContainer">
             <form  class="form" id="transferForm">
                 <h3>Form Transfer antar aset</h3>
                 <div class="form-item">
@@ -117,12 +120,12 @@
 
                 <div class="form-item">
                     <label for="transferAmount">Total</label>
-                    <input type="text" name="transferAmount" id="transferAmount" required>
+                    <input type="number" name="transferAmount" id="transferAmount" required>
                 </div>
 
                 <div class="form-item">
-                    <label for="transferAmountCost">Total</label>
-                    <input type="text" name="transferAmountCost" id="transferAmountCost" required>
+                    <label for="transferAmountCost">Biaya Admin</label>
+                    <input type="number" name="transferAmountCost" id="transferAmountCost">
                 </div>
 
                 <div class="form-item">
@@ -158,7 +161,22 @@
             </form>
         </div>
 
+        <div class="form-container">
+            <form action="" class="form">
+                <h3>Input Jurnal Transaksi Hari ini</h3>
+
+                <div class="form-item">
+                    <label for="">abis transaksi apa hari ini?</label>
+                    <textarea name="" id=""></textarea>
+                </div>
+
+                <div class="form-item">
+                    <button type="button" >Simpan</button>
+                </div>
+            </form>
+        </div>
+
     </div>
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>

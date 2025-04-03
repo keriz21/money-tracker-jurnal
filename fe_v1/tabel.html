@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Keuangan</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Laporan Keuangan</h1>
+        <div class="button-container">
+            <button onclick="show_table('insight-expense')">Pengeluaran</button>
+            <button onclick="show_table('insight-income')">Pemasukkan</button>
+            <a href="index.html">
+                <button>Input Data</button>
+            </a>
+        </div>
+
+        <div class="insight-container ">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Total Pemasukkan</th>
+                        <th>Total Pengeluaran</th>
+                        <th>Total Aset</th>
+                    </tr>
+                </thead>
+
+                <tbody id="insight-money">
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="insight-container hidden" id="insight-expense">
+            <h3 class="insight-title">
+                Insight Pengeluaran
+            </h3>
+
+            <div class="insight-item">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Kategori</th>
+                            <th>Total</th>
+                            <th>Aset</th>
+                            <th>Catatan</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="expense-body-item">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="insight-container" id="insight-income">
+            <h3 class="insight-title">
+                Insight Pemasukkan
+            </h3>
+
+            <div class="insight-item">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Kategori</th>
+                            <th>Total</th>
+                            <th>Aset</th>
+                            <th>Catatan</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="income-body-item">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/tabel_script.js"></script>
+</body>
+</html>

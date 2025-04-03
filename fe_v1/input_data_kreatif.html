@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Money Tracker</h1>
+        <div class="button-container">
+            <button onclick="window.location.href='index.html'">Laporan Keuangan</button>
+<button onclick="window.location.href='tabel.html'">Input Data</button>
+<button onclick="window.location.href='index.html'">Input Data Manual</button>
+        </div>
+
+        <div class="form-container">
+            <form action="" class="form" id="input-creative-form">
+                <h3>Input Jurnal Transaksi Hari ini</h3>
+
+                <div class="form-item">
+                    <label for="">abis transaksi apa hari ini?</label>
+                    <textarea name="text" id="input-creative" class="fixed-textarea"></textarea>
+                </div>
+
+                <div class="form-item">
+                    <button type="button" onclick="submitCreative('input-creative-form')">Simpan</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="script/input_creative.js"></script>
+</body>
+</html>
