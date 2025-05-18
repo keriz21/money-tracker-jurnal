@@ -37,6 +37,7 @@ function submitCreative(formId) {
     .then(data => {
         console.log("Success:", data);
         alert("Data parsed successfully!");
+        window.location.href = "/fe_v1/tabel.html"; // Redirect to the same page
     })
     .catch((error) => {
         console.error("Error:", error);

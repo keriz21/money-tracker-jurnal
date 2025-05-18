@@ -30,39 +30,46 @@ function submitForm(formId) {
     const formJSON = JSON.stringify(formObject);
     console.log("Form ID: ", formId);
     console.log("Form Data: ", formJSON);
-    
-    if (formId = "expenseForm") {
-        fetch(api + "expense", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: formJSON
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Success:", data);
-            alert("Expense added successfully!");
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
-    } 
-    if (formId = "incomeForm") {
-        fetch(api + "income", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: formJSON
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Success:", data);
-            alert("Income added successfully!");
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
+
+    // Pastikan variabel 'api' sudah terdefinisi
+    if (typeof api === "undefined") {
+        console.error("API endpoint tidak ditemukan.");
+        return;
     }
+
+    let url = "";
+    let successMessage = "";
+
+    if (formId === "expenseForm") {
+        url = api + "expense";
+        successMessage = "Expense added successfully!";
+    } else if (formId === "incomeForm") {
+        url = api + "income";
+        successMessage = "Income added successfully!";
+    } else {
+        console.error("Form ID tidak dikenali.");
+        return;
+    }
+
+    // Fetch ke API
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: formJSON
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Success:", data);
+        alert(successMessage);
+        
+        setTimeout(() => {
+            console.log("Redirecting...");
+            window.location.href = "tabel.html";
+        }, 1000);
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
 }
